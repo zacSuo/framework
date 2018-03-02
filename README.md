@@ -11,3 +11,7 @@
 
 * CPP (VS 2012)
 * [Mnist](http://yann.lecun.com/exdb/mnist/)
+
+
+## Vue [authority](https://vuejs.org/),[cn](https://cn.vuejs.org/)
+

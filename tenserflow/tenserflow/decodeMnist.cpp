@@ -72,23 +72,17 @@ std::string GetImageName(int number, int arr[])
 {
 	std::string str1, str2;
 
-	for (int i = 0; i < 10; i++) {
-		if (number == i) {
-			arr[i]++;
-			str1 = std::to_string(arr[i]);
+	arr[number]++;
+	str1 = std::to_string(arr[number]);
 
-			if (arr[i] < 10) {
-				str1 = "0000" + str1;
-			} else if (arr[i] < 100) {
-				str1 = "000" + str1;
-			} else if (arr[i] < 1000) {
-				str1 = "00" + str1;
-			} else if (arr[i] < 10000) {
-				str1 = "0" + str1;
-			}
-
-			break;
-		}
+	if (arr[number] < 10) {
+		str1 = "0000" + str1;
+	} else if (arr[number] < 100) {
+		str1 = "000" + str1;
+	} else if (arr[number] < 1000) {
+		str1 = "00" + str1;
+	} else if (arr[number] < 10000) {
+		str1 = "0" + str1;
 	}
 
 	str2 = std::to_string(number) + "_" + str1;
@@ -162,9 +156,7 @@ int decodeDatabase(std::string filenameImages,std::string filenameLabels,std::st
 	return 0;
 }
 
-// reference: http://eric-yuan.me/cpp-read-mnist/
-// test images and test labels
-// read MNIST image into OpenCV Mat vector
+
 int decodeMnist::MNISTtoImage()
 {	
 	// save test images
